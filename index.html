@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales & Inventory Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Sales & Inventory Analytics System</h1>
+
+    <h2>Dashboard</h2>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Sales</h3>
+            <p id="totalSales">Rs. 0</p>
+        </div>
+
+    </div>
+
+    <h2>Sales Analytics</h2>
+
+    <div class="analytics-box">
+        <canvas id="salesChart"></canvas>
+    </div>
+
+
+    <h2>Product Management</h2>
+
+    <form id="productForm">
+
+        <label>Product Name:</label>
+        <input type="text" id="newProductName" placeholder="Enter product name">
+
+        <label>Initial Stock:</label>
+        <input type="number" id="newProductQuantity" placeholder="Enter quantity">
+
+        <label>Price:</label>
+        <input type="number" id="newProductPrice" placeholder="Enter price">
+
+        <p id="productMessage"></p>
+
+        <button type="button" id="addProductButton">
+            Add Product
+        </button>
+
+    </form>
+
+
+    <h2>Sales Entry</h2>
+
+    <form>
+
+        <label>Product Name:</label>
+
+        <select id="productSelect">
+            <option value="">Select Product</option>
+        </select>
+
+
+        <label>Quantity Sold:</label>
+
+        <input
+            type="number"
+            id="saleQuantity"
+            placeholder="Enter quantity"
+        >
+
+
+        <label>Price per Unit:</label>
+
+        <input
+            type="number"
+            id="salePrice"
+            placeholder="Price"
+            readonly
+        >
+
+
+        <p id="saleTotal">
+            Total Amount: Rs. 0
+        </p>
+
+        <p id="saleMessage"></p>
+
+
+        <button
+            type="button"
+            id="addSaleButton"
+        >
+            Add Sale
+        </button>
+
+    </form>
+
+
+    <h2>Sales Records</h2>
+
+    <table id="salesTable">
+
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity Sold</th>
+                <th>Price</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+    </table>
+
+
+    <h2>Product-wise Stock</h2>
+
+    <table id="stockTable">
+
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Available Stock</th>
+                <th>Stock Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+    </table>
+
+
+    <div id="updateBox" style="display:none;">
+
+        <h2>Update Product</h2>
+
+        <label>New Stock:</label>
+        <input type="number" id="updateQuantity">
+
+        <label>New Price:</label>
+        <input type="number" id="updatePrice">
+
+        <button type="button" id="saveUpdateButton">
+            Save Update
+        </button>
+
+        <button type="button" id="cancelUpdateButton">
+            Cancel
+        </button>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
